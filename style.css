@@ -1,0 +1,309 @@
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s; /* For theme toggle */
+    line-height: 1.6;
+}
+
+.light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#theme-toggle-button {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-toggle-button:hover {
+    background-color: #e0a800;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.flashcard-container {
+    perspective: 1000px; /* For 3D effect on flip */
+    margin: 20px auto;
+    width: 300px;
+    height: 200px;
+}
+
+.flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s; /* CSS Transition for the flip */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.flashcard.is-flipped {
+    transform: rotateY(180deg); /* JavaScript will toggle this class */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back of the card when facing away */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-front {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.dark-theme .card-front {
+    background-color: #444;
+    border: 1px solid #555;
+    color: #f4f4f4;
+}
+
+.card-back {
+    background-color: #007bff;
+    color: white;
+    transform: rotateY(180deg); /* Initially hide the back */
+    border: 1px solid #0056b3;
+}
+
+.dark-theme .card-back {
+    background-color: #0056b3;
+    border: 1px solid #003d80;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 10px;
+    transition: background-color 0.3s ease; /* CSS Transition for button hover */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* CSS Animation Example: Pulse on Reveal Button */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px 10px rgba(40, 167, 69, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+
+#reveal-button.animate-pulse {
+    animation: pulse 1s ease-out; /* Applying the animation */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #6c757d;
+    color: white;
+}
+
+.dark-theme footer {
+    background-color: #212529;
+}
+
+/* Header Enhancements */
+.header-content {
+    padding-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-top: 5px;
+    color: #e9ecef;
+}
+
+/* Main Navigation */
+.main-nav {
+    background-color: #5a6268; /* A slightly different shade */
+    padding: 0.5rem 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+    background-color: #007bff; /* Highlight on hover/focus */
+    text-decoration: underline;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px; /* Constrain width for readability */
+    background-color: #fff; /* Default for light theme */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.dark-theme .content-section {
+    background-color: #3c3c3c; /* Darker background for sections in dark mode */
+    color: #f4f4f4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.content-section h2 {
+    color: #007bff;
+    margin-top: 0;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.dark-theme .content-section h2 {
+    color: #4dabf7; /* Lighter blue for dark theme headings */
+    border-bottom-color: #4dabf7;
+}
+
+.instruction-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+.dark-theme .instruction-text {
+    color: #adb5bd;
+}
+
+.flashcard-controls {
+    margin-top: 20px;
+}
+
+.note {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 15px;
+}
+
+.dark-theme .note {
+    color: #adb5bd;
+}
+
+/* Resource List Styling */
+.resource-list {
+    list-style-type: disc; /* Or 'circle', 'square', or an icon font */
+    padding-left: 20px;
+    text-align: left;
+}
+
+.resource-list li {
+    margin-bottom: 8px;
+}
+
+.resource-list li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.resource-list li a:hover {
+    text-decoration: underline;
+}
+
+.dark-theme .resource-list li a {
+    color: #4dabf7;
+}
+
+/* Quick Tip Box */
+.tip-box {
+    background-color: #e9f7ef; /* Light greenish background for tips */
+    border-left: 5px solid #28a745; /* Green accent border */
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.tip-box p {
+    margin: 0;
+}
+
+.dark-theme .tip-box {
+    background-color: #2a3b2f; /* Darker green for dark mode */
+    border-left-color: #34c759; /* Lighter green accent for dark mode */
+    color: #e0e0e0;
+}
+
+/* Footer adjustments */
+footer a {
+    color: #ffc107; /* Make links in footer stand out */
+}
+
+.dark-theme footer a {
+    color: #ffd54f;
+}

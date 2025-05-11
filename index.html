@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomy Quiz & Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme"> <header>
+        <div class="header-content">
+            <h1>Interactive Anatomy Hub</h1>
+            <p class="subtitle">Your Quick Guide to Medical Terms & Concepts</p>
+        </div>
+        <button id="theme-toggle-button">Toggle Theme</button>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#flashcards">Flashcards</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#quick-tips">Quick Tips</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="intro" class="content-section">
+            <h2>Welcome, Medical Scholar!</h2>
+            <p>This page is designed to help you learn and revise key anatomical structures and medical terms in an interactive way. Use the flashcards to test your knowledge, and explore the resources to deepen your understanding. Happy studying!</p>
+        </section>
+
+        <section id="flashcards" class="content-section">
+            <h2>Anatomy Flashcard Challenge</h2>
+            <p>Test your knowledge with our interactive flashcard. More topics coming soon!</p>
+            <div class="flashcard-container">
+                <div class="flashcard" id="anatomy-card">
+                    <div class="card-front">
+                        <h2>Femur</h2>
+                        <p class="instruction-text">(Click "Reveal Definition" below)</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Femur</h3>
+                        <p>The femur is the only bone located within the human thigh. It is both the longest and the strongest bone in the human body, extending from the hip to the knee.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flashcard-controls">
+                <button id="reveal-button">Reveal Definition</button>
+                <button id="next-card-button">Next Card (Concept)</button>
+            </div>
+            <p class="note"><em>The "Next Card" button is a placeholder for future expansion to load new terms.</em></p>
+        </section>
+
+        <section id="resources" class="content-section">
+            <h2>Learning Resources & Systems</h2>
+            <p>Here are some areas you might want to focus on in your anatomy studies:</p>
+            <ul class="resource-list">
+                <li><a href="#" onclick="alert('Link to Skeletal System resources would go here!'); return false;">Skeletal System</a></li>
+                <li><a href="#" onclick="alert('Link to Muscular System resources would go here!'); return false;">Muscular System</a></li>
+                <li><a href="#" onclick="alert('Link to Cardiovascular System resources would go here!'); return false;">Cardiovascular System</a></li>
+                <li><a href="#" onclick="alert('Link to Nervous System resources would go here!'); return false;">Nervous System</a></li>
+                <li><a href="#" onclick="alert('Link to Respiratory System resources would go here!'); return false;">Respiratory System</a></li>
+            </ul>
+        </section>
+
+        <section id="quick-tips" class="content-section">
+            <h2>Did You Know? / Quick Tip</h2>
+            <div class="tip-box">
+                <p><strong>Mnemonic Magic:</strong> Creating mnemonics (memory aids) can significantly improve your recall of complex anatomical terms and sequences. For example, to remember the carpal bones: "<strong>S</strong>ome <strong>L</strong>overs <strong>T</strong>ry <strong>P</strong>ositions <strong>T</strong>hat <strong>T</strong>hey <strong>C</strong>an't <strong>H</strong>andle."</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Medical Student Learning Tools. All rights reserved.</p>
+        <p>Designed to aid in medical education. <a href="#top">Back to Top</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple script to update the year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
